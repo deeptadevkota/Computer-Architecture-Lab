@@ -2,7 +2,7 @@
 // Extended version of 1-bit ALU to perform arithmetic operations on 64 bit numbers
 // Name: Deepta Devkota 
 //Roll_No: 191CS117 
-//Date: 10-03-2021
+//Date: 12-04-2021
 
 
 module ALU_64_bit(result,zero,overflow,op,a, b);

@@ -1,7 +1,7 @@
 //Module for BEQ Datapath 
 //Name: Deepta Devkota
 //Roll_No: 191CS117
-//Date: 27-03-2021
+//Date: 12-04-2021
 module Datapath_beq (new_PC, read_data_1, read_data_2, zero, ALU_result, overflow, register_1, register_2, imm, 
                  clk, RegWrite, ALUSrc, ALU_CO, old_PC);
     //inputs              

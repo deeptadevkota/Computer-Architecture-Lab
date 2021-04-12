@@ -2,8 +2,7 @@
 // Generetes 4-bit output based on Op and Funct inputs which helps in selecting the required arithmetic/ memory/ BEQ operation
 // Name: Deepta Devkota 
 //Roll_No: 191CS117
-//Date: 10-03-2021
-
+//Date: 12-04-2021
 module CU (ALU_CO, OP, func3,func7);
 
     input [1:0] OP;              //2 bit op input
@@ -18,16 +17,16 @@ module CU (ALU_CO, OP, func3,func7);
             1 : ALU_CO = 6;      // BEQ
         endcase
         if (OP == 2 && func7==0 && func3==0) begin
-            ALU_CO=2;
+            ALU_CO=2; //add
         end
         else if (OP==2 && func7==32 && func3==0) begin
-            ALU_CO=6;
+            ALU_CO=6;  //sub
         end
         else if (OP==2 && func7==0 && func3==7) begin
-            ALU_CO=0;
+            ALU_CO=0;   //and
         end
         else if(OP==2 && func7==0 && func3==6) begin
-            ALU_CO=1;
+            ALU_CO=1;    //or
         end
     end
 

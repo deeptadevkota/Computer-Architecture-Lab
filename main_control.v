@@ -1,3 +1,7 @@
+//main control unit for the pipeline
+// Name: Deepta Devkota 
+//Roll_No: 191CS117
+//Date:12-04-2021
 module Main_Control (Branch, MemRead, MemtoReg, ALUop, MemWrite, ALUsrc, RegWrite, OP);
     input [6:0] OP;
 

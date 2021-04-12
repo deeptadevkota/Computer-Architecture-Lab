@@ -1,7 +1,7 @@
 //MODULE FOR INSTRUCTION FETCH
 //Name: Deepta Devkota
 //Roll_No: 191CS117
-//Date: 27-03-2021
+//Date: 12-04-2021
 module Instruction_Fetch(instruction,new_PC,old_PC,reset,clock);
     //old_PC stores the previous 64- bit program counter
     input [63:0] old_PC;

@@ -1,3 +1,9 @@
+
+// test bench for MAIN control unit
+// Name: Deepta Devkota 
+//Roll_No: 191CS117
+//Date: 12-04-2021
+
 module Main_control_TB();
     reg [6:0] OP;
 

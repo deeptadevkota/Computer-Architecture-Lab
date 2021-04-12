@@ -1,3 +1,7 @@
+// MAIN Test bench
+// Name: Deepta Devkota 
+//Roll_No: 191CS117
+//Date: 12-04-2021
 module pipeline_tb();
     reg [63:0] old_PC;
     reg reset;
@@ -54,24 +58,24 @@ module pipeline_tb();
     end
 
 
-    // Datapath_beq data_path_beq(new_PC, read_data_1, read_data_2, zero, ALU_result_1, overflow, register_1, register_2, imm, 
-    //              clock, RegWrite, ALUsrc, ALU_CO, old_PC);
-    // initial begin
-    //     #40 $monitor("new_PC: %b\n",new_PC);
-    // end
+    Datapath_beq data_path_beq(new_PC, read_data_1, read_data_2, zero, ALU_result_1, overflow, register_1, register_2, imm, 
+                 clock, RegWrite, ALUsrc, ALU_CO, old_PC);
+    initial begin
+        #40 $monitor("new_PC: %b\n",new_PC);
+    end
  
  
 
-    // Datapath_ld_sd datapath_ld_sd(read_data_1, read_data_2, zero, ALU_result_2, overflow, register_1, register_2, imm_1, 
-    //              clock, RegWrite, ALUsrc, ALU_CO, MemWrite, MemRead, MemReg);
-    // initial begin
+    Datapath_ld_sd datapath_ld_sd(read_data_1, read_data_2, zero, ALU_result_2, overflow, register_1, register_2, imm_1, 
+                 clock, RegWrite, ALUsrc, ALU_CO, MemWrite, MemRead, MemReg);
+    initial begin
         
-    //     #40
-    //     if(RegWrite==1)
-    //         $monitor("Data loaded onto register\n");
-    //     else if(MemWrite==1)
-    //         $monitor("Data stored in memory\n");
-    // end
+        #40
+        if(RegWrite==1)
+           #55 $monitor("Data loaded onto register\n");
+        else if(MemWrite==1)
+           #60 $monitor("Data stored in memory\n");
+    end
     
 
 endmodule
