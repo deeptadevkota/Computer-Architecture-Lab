@@ -19,10 +19,10 @@ module Instruction_Fetch(instruction,new_PC,old_PC,reset,clock);
             begin
                 //hardcoded the contents of the Instruction memory
                 
-                I_MEM[old_PC>>2]=98;
+                I_MEM[old_PC>>2]=48;
 
                 //fectching the 32 bit instruction located at old_PC>>2 byte
-                instruction=I_MEM[old_PC>>2];
+                instruction=I_MEM[old_PC>> 2];
                 //if reset is 0 new_PC value is incremented by 4 bits
                 //if reset value is set to the first intruction
                 //the first instruction is located at 1X40 00000 address, its binary equivalent is 100 0000 0000 0000 0000 0000

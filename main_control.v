@@ -22,6 +22,7 @@ module Main_Control (Branch, MemRead, MemtoReg, ALUop, MemWrite, ALUsrc, RegWrit
         MemtoReg = (!f[2]) * (!f[1]) * (!f[0]);
         ALUop[0] = f[2] * f[1] * (!f[0]);
         ALUop[1] = (!f[2]) * f[1] * f[0];
+        // ALUop[1:0]=1;
         MemWrite = (!f[2]) * f[1] * (!f[0]);
         ALUsrc = (!f[2]) * (!f[0]);
         RegWrite = (!f[2]) * (f[1] * f[0] + (!f[1]) * (!f[0]));
