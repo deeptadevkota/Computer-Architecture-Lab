@@ -54,28 +54,40 @@ module pipeline_tb();
     Datapath_R_I data_path_R_I(read_data_1, read_data_2, zero, ALU_result, overflow, register_1, register_2, write_register, ALUsrc, imm, 
                  RegWrite, ALU_CO, clock);
     initial begin
+
+        #5
+        if(ALUsrc==1)
+            $display("I-type instruction:\n");
+        else
+            $display("R-type instruction:\n");
        #40 $monitor("ALU result: %b\n", ALU_result);
     end
 
 
-    Datapath_beq data_path_beq(new_PC, read_data_1, read_data_2, zero, ALU_result_1, overflow, register_1, register_2, imm, 
-                 clock, RegWrite, ALUsrc, ALU_CO, old_PC);
-    initial begin
-        #40 $monitor("new_PC: %b\n",new_PC);
-    end
+    // Datapath_beq data_path_beq(new_PC, read_data_1, read_data_2, zero, ALU_result_1, overflow, register_1, register_2, imm, 
+    //              clock, RegWrite, ALUsrc, ALU_CO, old_PC);
+    // initial begin
+
+    //     #5
+    //     $display("BEQ instruction:\n");
+    //     #40 $monitor("new_PC: %b\n",new_PC);
+    // end
  
  
 
-    Datapath_ld_sd datapath_ld_sd(read_data_1, read_data_2, zero, ALU_result_2, overflow, register_1, register_2, imm_1, 
-                 clock, RegWrite, ALUsrc, ALU_CO, MemWrite, MemRead, MemReg);
-    initial begin
+    // Datapath_ld_sd datapath_ld_sd(read_data_1, read_data_2, zero, ALU_result_2, overflow, register_1, register_2, imm_1, 
+    //              clock, RegWrite, ALUsrc, ALU_CO, MemWrite, MemRead, MemReg);
+    // initial begin
+
+    //     #5
+    //     $display("Load/store instruction:\n");
         
-        #40
-        if(RegWrite==1)
-           #55 $monitor("Data loaded onto register\n");
-        else if(MemWrite==1)
-           #60 $monitor("Data stored in memory\n");
-    end
+    //     #40
+    //     if(RegWrite==1)
+    //        #55 $monitor("Data loaded onto register\n");
+    //     else if(MemWrite==1)
+    //        #60 $monitor("Data stored in memory\n");
+    // end
     
 
 endmodule
