@@ -19,7 +19,17 @@ module Instruction_Fetch(instruction,new_PC,old_PC,reset,clock);
             begin
                 //hardcoded the contents of the Instruction memory
                 
-                I_MEM[old_PC>>2]=48;
+                //for Arithmatic operation
+                I_MEM[old_PC>>2]= 4358579;
+
+                //for beq
+                // I_MEM[old_PC>>2]= 98;
+
+                //for store
+                // I_MEM[old_PC>>2]= 2129955;  
+
+                //for load
+                //I_MEM[old_PC>>2]= 2129923; 
 
                 //fectching the 32 bit instruction located at old_PC>>2 byte
                 instruction=I_MEM[old_PC>> 2];
